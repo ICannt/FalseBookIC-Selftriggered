@@ -17,7 +17,7 @@ public class MC0420 extends SelftriggeredBaseIC {
 
     public MC0420() {
         this.ICName = "CLOCK";
-        this.ICNumber = "[MC0420]";
+        this.ICNumber = "ics.clock";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "Activated (only if Line 4 is \"TRUE\")", "", "");
         this.chipState.setOutputs("Output", "", "");

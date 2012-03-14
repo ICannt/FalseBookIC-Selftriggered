@@ -26,7 +26,7 @@ public class MC0264 extends SelftriggeredBaseIC {
 
     public MC0264() {
         this.ICName = "ITEM SENSOR";
-        this.ICNumber = "[MC0264]";
+        this.ICNumber = "ics.itemsensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output", "", "");

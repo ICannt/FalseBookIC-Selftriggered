@@ -19,7 +19,7 @@ public class MC0263 extends SelftriggeredBaseIC {
 
     public MC0263() {
         this.ICName = "BLOCK SENSOR";
-        this.ICNumber = "[MC0263]";
+        this.ICNumber = "ics.blocksensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if the block is present", "", "");

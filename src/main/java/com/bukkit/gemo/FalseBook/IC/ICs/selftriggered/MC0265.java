@@ -28,7 +28,7 @@ public class MC0265 extends SelftriggeredBaseIC {
 
     public MC0265() {
         this.ICName = "ITEM VANISHER";
-        this.ICNumber = "[MC0265]";
+        this.ICNumber = "ics.vanisher";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output", "", "");

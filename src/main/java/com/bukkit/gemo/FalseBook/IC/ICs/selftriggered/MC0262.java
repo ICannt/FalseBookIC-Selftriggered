@@ -16,7 +16,7 @@ public class MC0262 extends SelftriggeredBaseIC {
 
     public MC0262() {
         this.ICName = "LIGHT SENSOR";
-        this.ICNumber = "[MC0262]";
+        this.ICNumber = "ics.lightsensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if the threshold is reached", "", "");

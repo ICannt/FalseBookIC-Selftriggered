@@ -12,7 +12,7 @@ public class MC0282 extends SelftriggeredBaseIC {
 
     public MC0282() {
         this.ICName = "IS IT STORMY";
-        this.ICNumber = "[MC0282]";
+        this.ICNumber = "ics.storm";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if it is raining and thundering", "", "");

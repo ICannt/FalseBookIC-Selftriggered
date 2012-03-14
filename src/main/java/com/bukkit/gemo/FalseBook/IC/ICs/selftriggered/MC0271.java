@@ -38,7 +38,7 @@ public class MC0271 extends SelftriggeredBaseIC {
 
     public MC0271() {
         this.ICName = "DETECTION";
-        this.ICNumber = "[MC0271]";
+        this.ICNumber = "ics.detector";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.Types.add("PLAYER");
         this.Types.add("MOBHOSTILE");

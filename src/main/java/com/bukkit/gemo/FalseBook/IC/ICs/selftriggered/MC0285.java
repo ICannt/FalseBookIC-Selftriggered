@@ -17,7 +17,7 @@ public class MC0285 extends SelftriggeredBaseIC {
 
     public MC0285() {
         this.ICName = "SET WEATHER";
-        this.ICNumber = "[MC0285]";
+        this.ICNumber = "ics.setweather";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("", "", "");

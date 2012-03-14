@@ -15,7 +15,7 @@ public class MC9999 extends SelftriggeredBaseIC {
 
     public MC9999() {
         this.ICName = "3-BIT RANDOM";
-        this.ICNumber = "[MC9999]";
+        this.ICNumber = "ics.randomthree";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Random bit 1", "Random bit 2", "Random bit 3");

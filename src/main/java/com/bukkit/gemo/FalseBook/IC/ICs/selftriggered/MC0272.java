@@ -24,7 +24,7 @@ public class MC0272 extends SelftriggeredBaseIC {
 
     public MC0272() {
         setICName("P-DETECTION");
-        setICNumber("[MC0272]");
+        setICNumber("ics.pdetector");
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output", "", "");

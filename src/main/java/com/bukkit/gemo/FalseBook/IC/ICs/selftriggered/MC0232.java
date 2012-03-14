@@ -16,7 +16,7 @@ public class MC0232 extends SelftriggeredBaseIC {
 
     public MC0232() {
         this.ICName = "SET-TIME";
-        this.ICNumber = "[MC0232]";
+        this.ICNumber = "ics.settime";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("", "", "");

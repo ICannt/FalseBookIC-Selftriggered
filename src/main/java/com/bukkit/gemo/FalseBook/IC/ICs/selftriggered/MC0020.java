@@ -13,7 +13,7 @@ public class MC0020 extends SelftriggeredBaseIC {
 
     public MC0020() {
         setICName("RANDOM BIT");
-        setICNumber("[MC0020]");
+        setICNumber("ics.random");
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Random bit", "", "");

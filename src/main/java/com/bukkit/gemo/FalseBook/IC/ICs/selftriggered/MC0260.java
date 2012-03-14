@@ -15,7 +15,7 @@ public class MC0260 extends SelftriggeredBaseIC {
 
     public MC0260() {
         this.ICName = "WATER SENSOR";
-        this.ICNumber = "[MC0260]";
+        this.ICNumber = "ics.watersensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if water is present", "", "");

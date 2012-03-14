@@ -15,7 +15,7 @@ public class MC0261 extends SelftriggeredBaseIC {
 
     public MC0261() {
         this.ICName = "LAVA SENSOR";
-        this.ICNumber = "[MC0261]";
+        this.ICNumber = "ics.lavasensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if lava is present", "", "");

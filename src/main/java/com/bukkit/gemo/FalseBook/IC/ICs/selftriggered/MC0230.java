@@ -16,7 +16,7 @@ public class MC0230 extends SelftriggeredBaseIC {
 
     public MC0230() {
         this.ICName = "IS IT DAY";
-        this.ICNumber = "[MC0230]";
+        this.ICNumber = "ics.day";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if it is day", "", "");

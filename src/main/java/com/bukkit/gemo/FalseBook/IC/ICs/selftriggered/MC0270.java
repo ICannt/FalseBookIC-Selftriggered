@@ -15,7 +15,7 @@ public class MC0270 extends SelftriggeredBaseIC {
 
     public MC0270() {
         this.ICName = "POWER SENSOR";
-        this.ICNumber = "[MC0270]";
+        this.ICNumber = "ics.powersensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
         this.chipState.setOutputs("Output: High if the block is powered", "", "");

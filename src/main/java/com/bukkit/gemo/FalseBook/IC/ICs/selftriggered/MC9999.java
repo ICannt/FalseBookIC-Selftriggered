@@ -8,51 +8,48 @@ import com.bukkit.gemo.utils.ICUtils;
 import java.util.Random;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC9999 extends SelftriggeredBaseIC
-{
-  Random rGen = new Random();
-  boolean[] oldStatus = new boolean[3];
+public class MC9999 extends SelftriggeredBaseIC {
 
-  public MC9999() {
-    setTypeID(1);
-    this.ICName = "3-BIT RANDOM";
-    this.ICNumber = "[MC9999]";
-    setICGroup(ICGroup.SELFTRIGGERED);
-    this.chipState = new BaseChip(false, false, false, "", "", "");
-    this.chipState.setOutputs("Random bit 1", "Random bit 2", "Random bit 3");
-    this.ICDescription = "The MC9999 generates three random bits every X serverticks.";
-  }
+    Random rGen = new Random();
+    boolean[] oldStatus = new boolean[3];
 
-  public boolean onLoad(String[] lines)
-  {
-    this.oldStatus[0] = ICUtils.isLeverActive(this.signBlock);
-    this.oldStatus[1] = ICUtils.isLeftLeverActive(this.signBlock);
-    this.oldStatus[2] = ICUtils.isRightLeverActive(this.signBlock);
-    return true;
-  }
-
-  public void checkCreation(SignChangeEvent event)
-  {
-    event.setLine(2, "");
-    event.setLine(3, "");
-  }
-
-  public void Execute()
-  {
-    boolean newStatus = this.rGen.nextBoolean();
-    if (newStatus != this.oldStatus[0]) {
-      this.oldStatus[0] = newStatus;
-      switchLever(Lever.BACK, this.signBlock, newStatus);
+    public MC9999() {
+        setTypeID(1);
+        this.ICName = "3-BIT RANDOM";
+        this.ICNumber = "[MC9999]";
+        setICGroup(ICGroup.SELFTRIGGERED);
+        this.chipState = new BaseChip(false, false, false, "", "", "");
+        this.chipState.setOutputs("Random bit 1", "Random bit 2", "Random bit 3");
+        this.ICDescription = "The MC9999 generates three random bits every X serverticks.";
     }
-    newStatus = this.rGen.nextBoolean();
-    if (newStatus != this.oldStatus[1]) {
-      this.oldStatus[1] = newStatus;
-      switchLever(Lever.LEFT, this.signBlock, newStatus);
+
+    public boolean onLoad(String[] lines) {
+        this.oldStatus[0] = ICUtils.isLeverActive(this.signBlock);
+        this.oldStatus[1] = ICUtils.isLeftLeverActive(this.signBlock);
+        this.oldStatus[2] = ICUtils.isRightLeverActive(this.signBlock);
+        return true;
     }
-    newStatus = this.rGen.nextBoolean();
-    if (newStatus != this.oldStatus[2]) {
-      this.oldStatus[2] = newStatus;
-      switchLever(Lever.RIGHT, this.signBlock, newStatus);
+
+    public void checkCreation(SignChangeEvent event) {
+        event.setLine(2, "");
+        event.setLine(3, "");
     }
-  }
+
+    public void Execute() {
+        boolean newStatus = this.rGen.nextBoolean();
+        if (newStatus != this.oldStatus[0]) {
+            this.oldStatus[0] = newStatus;
+            switchLever(Lever.BACK, this.signBlock, newStatus);
+        }
+        newStatus = this.rGen.nextBoolean();
+        if (newStatus != this.oldStatus[1]) {
+            this.oldStatus[1] = newStatus;
+            switchLever(Lever.LEFT, this.signBlock, newStatus);
+        }
+        newStatus = this.rGen.nextBoolean();
+        if (newStatus != this.oldStatus[2]) {
+            this.oldStatus[2] = newStatus;
+            switchLever(Lever.RIGHT, this.signBlock, newStatus);
+        }
+    }
 }

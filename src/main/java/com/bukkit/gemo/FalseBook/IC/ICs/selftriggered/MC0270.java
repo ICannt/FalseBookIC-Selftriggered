@@ -14,7 +14,6 @@ public class MC0270 extends SelftriggeredBaseIC {
     private boolean result;
 
     public MC0270() {
-        setTypeID(11);
         this.ICName = "POWER SENSOR";
         this.ICNumber = "[MC0270]";
         setICGroup(ICGroup.SELFTRIGGERED);

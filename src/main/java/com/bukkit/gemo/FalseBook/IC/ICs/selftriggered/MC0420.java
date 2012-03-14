@@ -16,7 +16,6 @@ public class MC0420 extends SelftriggeredBaseIC {
     private int nowCount = 0;
 
     public MC0420() {
-        setTypeID(4);
         this.ICName = "CLOCK";
         this.ICNumber = "[MC0420]";
         setICGroup(ICGroup.SELFTRIGGERED);

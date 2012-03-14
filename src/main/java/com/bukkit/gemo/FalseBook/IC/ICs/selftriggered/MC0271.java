@@ -37,7 +37,6 @@ public class MC0271 extends SelftriggeredBaseIC {
     List<String> Types = new ArrayList<String>();
 
     public MC0271() {
-        setTypeID(12);
         this.ICName = "DETECTION";
         this.ICNumber = "[MC0271]";
         setICGroup(ICGroup.SELFTRIGGERED);

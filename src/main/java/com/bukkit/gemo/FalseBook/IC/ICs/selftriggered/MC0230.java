@@ -15,7 +15,6 @@ public class MC0230 extends SelftriggeredBaseIC {
     private boolean result;
 
     public MC0230() {
-        setTypeID(5);
         this.ICName = "IS IT DAY";
         this.ICNumber = "[MC0230]";
         setICGroup(ICGroup.SELFTRIGGERED);

@@ -14,7 +14,6 @@ public class MC0260 extends SelftriggeredBaseIC {
     private boolean result;
 
     public MC0260() {
-        setTypeID(7);
         this.ICName = "WATER SENSOR";
         this.ICNumber = "[MC0260]";
         setICGroup(ICGroup.SELFTRIGGERED);

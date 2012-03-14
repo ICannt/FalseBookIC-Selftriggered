@@ -14,7 +14,6 @@ public class MC9999 extends SelftriggeredBaseIC {
     boolean[] oldStatus = new boolean[3];
 
     public MC9999() {
-        setTypeID(1);
         this.ICName = "3-BIT RANDOM";
         this.ICNumber = "[MC9999]";
         setICGroup(ICGroup.SELFTRIGGERED);

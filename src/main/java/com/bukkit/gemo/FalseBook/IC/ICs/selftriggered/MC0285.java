@@ -16,7 +16,6 @@ public class MC0285 extends SelftriggeredBaseIC {
     private boolean isThunder = false;
 
     public MC0285() {
-        setTypeID(17);
         this.ICName = "SET WEATHER";
         this.ICNumber = "[MC0285]";
         setICGroup(ICGroup.SELFTRIGGERED);

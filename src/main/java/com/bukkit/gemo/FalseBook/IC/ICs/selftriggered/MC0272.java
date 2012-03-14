@@ -23,7 +23,6 @@ public class MC0272 extends SelftriggeredBaseIC {
     private String detectionMode = null;
 
     public MC0272() {
-        setTypeID(13);
         setICName("P-DETECTION");
         setICNumber("[MC0272]");
         setICGroup(ICGroup.SELFTRIGGERED);

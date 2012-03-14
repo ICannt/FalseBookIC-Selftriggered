@@ -18,7 +18,6 @@ public class MC0263 extends SelftriggeredBaseIC {
     private FBItemType item = null;
 
     public MC0263() {
-        setTypeID(10);
         this.ICName = "BLOCK SENSOR";
         this.ICNumber = "[MC0263]";
         setICGroup(ICGroup.SELFTRIGGERED);

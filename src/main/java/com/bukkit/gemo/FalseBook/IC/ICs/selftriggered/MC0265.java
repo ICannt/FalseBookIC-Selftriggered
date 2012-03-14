@@ -27,7 +27,6 @@ public class MC0265 extends SelftriggeredBaseIC {
     private ArrayList<FBItemType> itemList;
 
     public MC0265() {
-        setTypeID(ExternalICPackage.getUniqueID("[MC0265]"));
         this.ICName = "ITEM VANISHER";
         this.ICNumber = "[MC0265]";
         setICGroup(ICGroup.SELFTRIGGERED);

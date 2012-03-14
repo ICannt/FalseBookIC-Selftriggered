@@ -15,7 +15,6 @@ public class MC0232 extends SelftriggeredBaseIC {
     private World myWorld;
 
     public MC0232() {
-        setTypeID(6);
         this.ICName = "SET-TIME";
         this.ICNumber = "[MC0232]";
         setICGroup(ICGroup.SELFTRIGGERED);

@@ -15,7 +15,6 @@ public class MC0262 extends SelftriggeredBaseIC {
     private int minLight = 15;
 
     public MC0262() {
-        setTypeID(9);
         this.ICName = "LIGHT SENSOR";
         this.ICNumber = "[MC0262]";
         setICGroup(ICGroup.SELFTRIGGERED);

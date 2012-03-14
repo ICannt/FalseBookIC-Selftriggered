@@ -25,7 +25,6 @@ public class MC0264 extends SelftriggeredBaseIC {
     private ArrayList<FBItemType> itemList;
 
     public MC0264() {
-        setTypeID(18);
         this.ICName = "ITEM SENSOR";
         this.ICNumber = "[MC0264]";
         setICGroup(ICGroup.SELFTRIGGERED);

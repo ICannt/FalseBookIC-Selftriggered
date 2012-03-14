@@ -12,7 +12,6 @@ public class MC0020 extends SelftriggeredBaseIC {
     private Random rGen = new Random();
 
     public MC0020() {
-        setTypeID(0);
         setICName("RANDOM BIT");
         setICNumber("[MC0020]");
         setICGroup(ICGroup.SELFTRIGGERED);

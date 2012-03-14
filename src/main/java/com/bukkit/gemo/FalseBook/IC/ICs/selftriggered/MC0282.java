@@ -11,7 +11,6 @@ public class MC0282 extends SelftriggeredBaseIC {
     private boolean result;
 
     public MC0282() {
-        setTypeID(16);
         this.ICName = "IS IT STORMY";
         this.ICNumber = "[MC0282]";
         setICGroup(ICGroup.SELFTRIGGERED);

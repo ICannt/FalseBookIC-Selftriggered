@@ -60,22 +60,22 @@ public class ICSDetector extends SelftriggeredBaseIC {
             return;
         }
 
-        Integer radius = Parser.getIntegerFromOffsetLine(event.getLine(2), 0);
-        Vector vector = Parser.getVectorFromOffsetLine(event.getLine(2));
+        Integer radius = Parser.getIntegerFromOffsetLine(event.getLine(1), 0);
+        Vector vector = Parser.getVectorFromOffsetLine(event.getLine(1));
         if (radius < 0) {
             radius = 0;
         }
         if ((vector.getBlockX() != 0) || (vector.getBlockY() != 0) || (vector.getBlockZ() != 0)) {
-            event.setLine(2, radius + "=" + vector.getBlockX() + ":" + vector.getBlockY() + ":" + vector.getBlockZ());
+            event.setLine(1, radius + "=" + vector.getBlockX() + ":" + vector.getBlockY() + ":" + vector.getBlockZ());
         } else {
-            event.setLine(2, radius.toString());
+            event.setLine(1, radius.toString());
         }
-        if (event.getLine(3).length() > 0) {
+        if (event.getLine(2).length() > 0) {
             boolean f = false;
             for (int i = 0; i < this.Types.size(); i++) {
-                if (this.Types.get(i).equalsIgnoreCase(event.getLine(3))) {
+                if (this.Types.get(i).equalsIgnoreCase(event.getLine(2))) {
                     f = true;
-                    event.setLine(3, this.Types.get(i));
+                    event.setLine(2, this.Types.get(i));
                 }
             }
             if (!f) {
@@ -90,17 +90,17 @@ public class ICSDetector extends SelftriggeredBaseIC {
 
     public boolean onLoad(String[] lines) {
         try {
-            if (!Parser.isIntegerWithOffset(lines[2])) {
+            if (!Parser.isIntegerWithOffset(lines[1])) {
                 return false;
             }
-            this.detectionRange = Parser.getIntegerFromOffsetLine(lines[2], 0);
+            this.detectionRange = Parser.getIntegerFromOffsetLine(lines[1], 0);
             if (this.detectionRange < 0) {
                 this.detectionRange = 0;
             }
-            this.offsetVector = Parser.getVectorFromOffsetLine(lines[2]);
+            this.offsetVector = Parser.getVectorFromOffsetLine(lines[1]);
 
             for (int i = 0; i < this.Types.size(); i++) {
-                if (this.Types.get(i).equalsIgnoreCase(lines[3])) {
+                if (this.Types.get(i).equalsIgnoreCase(lines[2])) {
                     this.detectionMode = i;
                 }
             }

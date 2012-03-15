@@ -25,24 +25,24 @@ public class ICSSetTime extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        if (!Parser.isInteger(event.getLine(2))) {
+        if (!Parser.isInteger(event.getLine(1))) {
             SignUtils.cancelSignCreation(event, ChatColor.RED + "Line 3 must be a number.");
             return;
         }
 
-        int value = Parser.getInteger(event.getLine(2), 13000);
+        int value = Parser.getInteger(event.getLine(1), 13000);
         if ((value < 0) || (value > 23999)) {
             value = 0;
         }
-        event.setLine(2, String.valueOf(value));
-        event.setLine(3, "");
+        event.setLine(1, String.valueOf(value));
+        event.setLine(2, "");
     }
 
     public boolean onLoad(String[] lines) {
-        if (!Parser.isInteger(lines[2])) {
+        if (!Parser.isInteger(lines[1])) {
             return false;
         }
-        this.newTime = Parser.getInteger(lines[2], 13000);
+        this.newTime = Parser.getInteger(lines[1], 13000);
         this.myWorld = this.signBlock.getWorld();
         return true;
     }

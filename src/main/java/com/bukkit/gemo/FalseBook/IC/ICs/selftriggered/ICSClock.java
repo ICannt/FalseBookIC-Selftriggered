@@ -26,11 +26,11 @@ public class ICSClock extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        if (event.getLine(2).length() < 1) {
-            event.setLine(2, "5");
+        if (event.getLine(1).length() < 1) {
+            event.setLine(1, "5");
         }
 
-        String yOffset = event.getLine(2);
+        String yOffset = event.getLine(1);
         try {
             if (yOffset.length() > 0) {
                 int yy = Integer.parseInt(yOffset);
@@ -41,16 +41,16 @@ public class ICSClock extends SelftriggeredBaseIC {
                     yy = 15;
                 }
                 this.pulserate = yy;
-                event.setLine(2, ((Integer) this.pulserate).toString());
+                event.setLine(1, ((Integer) this.pulserate).toString());
             }
         } catch (NumberFormatException e) {
             SignUtils.cancelSignCreation(event, "The third line must be a number or be blank.");
             return;
         }
 
-        if (event.getLine(3).length() > 0) {
+        if (event.getLine(2).length() > 0) {
             try {
-                Boolean.parseBoolean(event.getLine(3));
+                Boolean.parseBoolean(event.getLine(2));
             } catch (Exception e) {
                 SignUtils.cancelSignCreation(event, "The last line must be false, true or nothing.");
                 return;
@@ -60,9 +60,9 @@ public class ICSClock extends SelftriggeredBaseIC {
 
     public boolean onLoad(String[] lines) {
         try {
-            this.pulserate = Integer.valueOf(lines[2]).intValue();
-            if (lines[3].length() > 0) {
-                this.canTurnOff = Boolean.valueOf(lines[3]).booleanValue();
+            this.pulserate = Integer.valueOf(lines[1]).intValue();
+            if (lines[2].length() > 0) {
+                this.canTurnOff = Boolean.valueOf(lines[2]).booleanValue();
             }
         } catch (Exception e) {
             this.canTurnOff = true;

@@ -28,11 +28,11 @@ public class ICSBlockSensor extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        if (event.getLine(2).length() < 1) {
-            event.setLine(2, "-1");
+        if (event.getLine(1).length() < 1) {
+            event.setLine(1, "-1");
         }
 
-        String yOffset = event.getLine(2);
+        String yOffset = event.getLine(1);
         try {
             if (yOffset.length() > 0) {
                 Integer.parseInt(yOffset);
@@ -42,19 +42,19 @@ public class ICSBlockSensor extends SelftriggeredBaseIC {
             return;
         }
 
-        if (event.getLine(2) == null) {
+        if (event.getLine(1) == null) {
             SignUtils.cancelSignCreation(event, "Item not found");
             return;
         }
 
-        String[] split = event.getLine(3).split(":");
+        String[] split = event.getLine(2).split(":");
         try {
             if (!BlockUtils.isValidBlock(Integer.valueOf(split[0]).intValue())) {
                 SignUtils.cancelSignCreation(event, "Block not found");
                 return;
             }
         } catch (Exception e) {
-            if (!BlockUtils.isValidBlock(BlockUtils.getItemIDFromName(event.getLine(3)))) {
+            if (!BlockUtils.isValidBlock(BlockUtils.getItemIDFromName(event.getLine(2)))) {
                 SignUtils.cancelSignCreation(event, "Block not found");
                 return;
             }
@@ -63,8 +63,8 @@ public class ICSBlockSensor extends SelftriggeredBaseIC {
 
     public boolean onLoad(String[] lines) {
         try {
-            this.myBlock = getICBlock(this.signBlock).getBlock().getRelative(0, Integer.valueOf(lines[2]).intValue(), 0);
-            ArrayList<FBItemType> thisItems = SignUtils.parseLineToItemListWithSize(lines[3], "-", false, 1, 1);
+            this.myBlock = getICBlock(this.signBlock).getBlock().getRelative(0, Integer.valueOf(lines[1]).intValue(), 0);
+            ArrayList<FBItemType> thisItems = SignUtils.parseLineToItemListWithSize(lines[2], "-", false, 1, 1);
             if (thisItems != null) {
                 this.item = thisItems.get(0);
                 thisItems.clear();

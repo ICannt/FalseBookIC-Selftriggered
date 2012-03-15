@@ -26,18 +26,18 @@ public class ICSSetWeather extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        event.setLine(3, "");
-        String line = event.getLine(2);
+        event.setLine(2, "");
+        String line = event.getLine(1);
         if ((!line.equalsIgnoreCase("sun")) && (!line.equalsIgnoreCase("rain")) && (!line.equalsIgnoreCase("storm"))) {
             SignUtils.cancelSignCreation(event, ChatColor.RED + "Line 3 must be sun, rain or storm");
             return;
         }
-        event.setLine(2, line.toUpperCase());
+        event.setLine(1, line.toUpperCase());
     }
 
     public boolean onLoad(String[] lines) {
         this.myWorld = this.signBlock.getWorld();
-        String line = lines[2];
+        String line = lines[1];
         if ((!line.equalsIgnoreCase("sun")) && (!line.equalsIgnoreCase("rain")) && (!line.equalsIgnoreCase("storm"))) {
             this.mode = -1;
             return false;

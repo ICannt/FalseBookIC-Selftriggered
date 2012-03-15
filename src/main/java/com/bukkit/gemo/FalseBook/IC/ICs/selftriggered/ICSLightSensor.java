@@ -25,13 +25,13 @@ public class ICSLightSensor extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        event.setLine(3, "");
+        event.setLine(2, "");
 
-        if (event.getLine(2).length() < 1) {
-            event.setLine(2, "15");
+        if (event.getLine(1).length() < 1) {
+            event.setLine(1, "15");
         }
 
-        String minLight = event.getLine(2);
+        String minLight = event.getLine(1);
         try {
             if (minLight.length() > 0) {
                 Integer.parseInt(minLight);
@@ -44,7 +44,7 @@ public class ICSLightSensor extends SelftriggeredBaseIC {
 
     public boolean onLoad(String[] lines) {
         try {
-            this.myBlock = getICBlock(this.signBlock).getBlock().getRelative(0, Integer.valueOf(lines[2]).intValue(), 0);
+            this.myBlock = getICBlock(this.signBlock).getBlock().getRelative(0, Integer.valueOf(lines[1]).intValue(), 0);
             return true;
         } catch (Exception e) {
             this.myBlock = null;

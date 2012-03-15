@@ -25,17 +25,17 @@ public class ICSDay extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
-        if (event.getLine(2).length() > 1) {
+        if (event.getLine(1).length() > 1) {
             try {
-                Integer.valueOf(event.getLine(2));
+                Integer.valueOf(event.getLine(1));
             } catch (Exception e) {
                 SignUtils.cancelSignCreation(event, ChatColor.RED + "Line 3 must be a number.");
                 return;
             }
         }
-        if (event.getLine(3).length() > 1) {
+        if (event.getLine(2).length() > 1) {
             try {
-                Integer.valueOf(event.getLine(3));
+                Integer.valueOf(event.getLine(2));
             } catch (Exception e) {
                 SignUtils.cancelSignCreation(event, ChatColor.RED + "Line 4 must be a number.");
                 return;
@@ -45,8 +45,8 @@ public class ICSDay extends SelftriggeredBaseIC {
 
     public boolean onLoad(String[] lines) {
         try {
-            this.val1 = Integer.valueOf(lines[2]).intValue();
-            this.val2 = Integer.valueOf(lines[3]).intValue();
+            this.val1 = Integer.valueOf(lines[1]).intValue();
+            this.val2 = Integer.valueOf(lines[2]).intValue();
         } catch (Exception e) {
             this.val1 = 0;
             this.val2 = 13000;

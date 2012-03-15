@@ -20,8 +20,8 @@ public class ICSRain extends SelftriggeredBaseIC {
     }
 
     public void checkCreation(SignChangeEvent event) {
+        event.setLine(1, "");
         event.setLine(2, "");
-        event.setLine(3, "");
     }
 
     public void Execute() {

@@ -8,12 +8,12 @@ import com.bukkit.gemo.utils.SignUtils;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0261 extends SelftriggeredBaseIC {
+public class ICSLavaSensor extends SelftriggeredBaseIC {
 
     private Block myBlock = null;
     private boolean result;
 
-    public MC0261() {
+    public ICSLavaSensor() {
         this.ICName = "LAVA SENSOR";
         this.ICNumber = "ics.lavasensor";
         setICGroup(ICGroup.SELFTRIGGERED);

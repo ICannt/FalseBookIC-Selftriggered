@@ -8,13 +8,13 @@ import com.bukkit.gemo.utils.SignUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0230 extends SelftriggeredBaseIC {
+public class ICSDay extends SelftriggeredBaseIC {
 
     private int val1;
     private int val2;
     private boolean result;
 
-    public MC0230() {
+    public ICSDay() {
         this.ICName = "IS IT DAY";
         this.ICNumber = "ics.day";
         setICGroup(ICGroup.SELFTRIGGERED);

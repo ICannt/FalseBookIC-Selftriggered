@@ -8,14 +8,14 @@ import com.bukkit.gemo.utils.ICUtils;
 import com.bukkit.gemo.utils.SignUtils;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0420 extends SelftriggeredBaseIC {
+public class ICSClock extends SelftriggeredBaseIC {
 
     private int pulserate = 1;
     private boolean isOn = true;
     private boolean canTurnOff = false;
     private int nowCount = 0;
 
-    public MC0420() {
+    public ICSClock() {
         this.ICName = "CLOCK";
         this.ICNumber = "ics.clock";
         setICGroup(ICGroup.SELFTRIGGERED);

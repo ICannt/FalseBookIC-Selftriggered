@@ -16,7 +16,7 @@ import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-public class MC0264 extends SelftriggeredBaseIC {
+public class ICSItemSensor extends SelftriggeredBaseIC {
 
     private boolean result;
     private int detectionRange = -1;
@@ -24,7 +24,7 @@ public class MC0264 extends SelftriggeredBaseIC {
     private Location blockLoc = null;
     private ArrayList<FBItemType> itemList;
 
-    public MC0264() {
+    public ICSItemSensor() {
         this.ICName = "ITEM SENSOR";
         this.ICNumber = "ics.itemsensor";
         setICGroup(ICGroup.SELFTRIGGERED);

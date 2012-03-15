@@ -8,12 +8,12 @@ import com.bukkit.gemo.utils.ICUtils;
 import java.util.Random;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC9999 extends SelftriggeredBaseIC {
+public class ICSRandomThree extends SelftriggeredBaseIC {
 
     Random rGen = new Random();
     boolean[] oldStatus = new boolean[3];
 
-    public MC9999() {
+    public ICSRandomThree() {
         this.ICName = "3-BIT RANDOM";
         this.ICNumber = "ics.randomthree";
         setICGroup(ICGroup.SELFTRIGGERED);

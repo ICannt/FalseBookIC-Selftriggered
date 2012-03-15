@@ -8,19 +8,19 @@ import com.bukkit.gemo.utils.SignUtils;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0270 extends SelftriggeredBaseIC {
+public class ICSWaterSensor extends SelftriggeredBaseIC {
 
     private Block myBlock = null;
     private boolean result;
 
-    public MC0270() {
-        this.ICName = "POWER SENSOR";
-        this.ICNumber = "ics.powersensor";
+    public ICSWaterSensor() {
+        this.ICName = "WATER SENSOR";
+        this.ICNumber = "ics.watersensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
-        this.chipState.setOutputs("Output: High if the block is powered", "", "");
-        this.chipState.setLines("Y offset, with 0 being the IC block. Leave blank to default to the block below.", "");
-        this.ICDescription = "The MC0270 checks for a powered block relative to the block behind the IC sign. By default it checks the block directly underneath but this can be changed.";
+        this.chipState.setOutputs("Output: High if water is present", "", "");
+        this.chipState.setLines("Y offset, with 0 being the IC block. Leave blank to default to the block below. ", "");
+        this.ICDescription = "The MC0260 checks for the presence of water relative to the block behind the IC sign. By default it checks the block directly underneath but this can be changed.";
     }
 
     public void checkCreation(SignChangeEvent event) {
@@ -36,7 +36,7 @@ public class MC0270 extends SelftriggeredBaseIC {
                 Integer.parseInt(yOffset);
             }
         } catch (NumberFormatException e) {
-            SignUtils.cancelSignCreation(event, "The third line must be a number or blank.");
+            SignUtils.cancelSignCreation(event, "The third line must be a number or be blank.");
             return;
         }
     }
@@ -47,12 +47,13 @@ public class MC0270 extends SelftriggeredBaseIC {
             return true;
         } catch (Exception e) {
             this.myBlock = null;
+            e.printStackTrace();
         }
         return false;
     }
 
     public void Execute() {
-        this.result = ((this.myBlock.isBlockPowered()) || (this.myBlock.isBlockIndirectlyPowered()));
+        this.result = ((this.myBlock.getTypeId() == 8) || (this.myBlock.getTypeId() == 9));
         if (this.result != this.oldStatus) {
             this.oldStatus = this.result;
             switchLever(Lever.BACK, this.signBlock, this.result);

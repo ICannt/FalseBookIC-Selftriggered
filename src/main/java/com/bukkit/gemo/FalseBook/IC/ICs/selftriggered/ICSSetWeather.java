@@ -8,14 +8,14 @@ import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0285 extends SelftriggeredBaseIC {
+public class ICSSetWeather extends SelftriggeredBaseIC {
 
     private World myWorld;
     private int mode = -1;
     private boolean isRain = false;
     private boolean isThunder = false;
 
-    public MC0285() {
+    public ICSSetWeather() {
         this.ICName = "SET WEATHER";
         this.ICNumber = "ics.setweather";
         setICGroup(ICGroup.SELFTRIGGERED);

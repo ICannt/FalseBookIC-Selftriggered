@@ -6,17 +6,17 @@ import com.bukkit.gemo.FalseBook.IC.ICs.Lever;
 import com.bukkit.gemo.FalseBook.IC.ICs.SelftriggeredBaseIC;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0281 extends SelftriggeredBaseIC {
+public class ICSStorm extends SelftriggeredBaseIC {
 
     private boolean result;
 
-    public MC0281() {
-        this.ICName = "IS IT RAINY";
-        this.ICNumber = "ics.rain";
+    public ICSStorm() {
+        this.ICName = "IS IT STORMY";
+        this.ICNumber = "ics.storm";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
-        this.chipState.setOutputs("Output: High if it is raining, but not thundering", "", "");
-        this.ICDescription = "The MC0281 outputs high if it is raining, but not thundering";
+        this.chipState.setOutputs("Output: High if it is raining and thundering", "", "");
+        this.ICDescription = "The MC0282 outputs high if it is raining and thundering.";
     }
 
     public void checkCreation(SignChangeEvent event) {
@@ -25,7 +25,7 @@ public class MC0281 extends SelftriggeredBaseIC {
     }
 
     public void Execute() {
-        this.result = ((this.signBlock.getWorld().hasStorm()) && (!this.signBlock.getWorld().isThundering()));
+        this.result = ((this.signBlock.getWorld().hasStorm()) && (this.signBlock.getWorld().isThundering()));
         if (this.result != this.oldStatus) {
             this.oldStatus = this.result;
             switchLever(Lever.BACK, this.signBlock, this.result);

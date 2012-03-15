@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.util.Vector;
 
-public class MC0272 extends SelftriggeredBaseIC {
+public class ICSPDetector extends SelftriggeredBaseIC {
 
     private boolean result;
     private int detectionRange = -1;
@@ -22,7 +22,7 @@ public class MC0272 extends SelftriggeredBaseIC {
     private String detectedString = null;
     private String detectionMode = null;
 
-    public MC0272() {
+    public ICSPDetector() {
         setICName("P-DETECTION");
         setICNumber("ics.pdetector");
         setICGroup(ICGroup.SELFTRIGGERED);

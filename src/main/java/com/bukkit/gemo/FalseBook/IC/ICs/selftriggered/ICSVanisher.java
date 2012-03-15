@@ -18,7 +18,7 @@ import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-public class MC0265 extends SelftriggeredBaseIC {
+public class ICSVanisher extends SelftriggeredBaseIC {
 
     private boolean result;
     private int detectionRange = -1;
@@ -26,7 +26,7 @@ public class MC0265 extends SelftriggeredBaseIC {
     private Location blockLoc = null;
     private ArrayList<FBItemType> itemList;
 
-    public MC0265() {
+    public ICSVanisher() {
         this.ICName = "ITEM VANISHER";
         this.ICNumber = "ics.vanisher";
         setICGroup(ICGroup.SELFTRIGGERED);

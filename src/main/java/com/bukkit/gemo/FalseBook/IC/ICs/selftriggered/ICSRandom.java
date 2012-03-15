@@ -7,11 +7,11 @@ import com.bukkit.gemo.FalseBook.IC.ICs.SelftriggeredBaseIC;
 import java.util.Random;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0020 extends SelftriggeredBaseIC {
+public class ICSRandom extends SelftriggeredBaseIC {
 
     private Random rGen = new Random();
 
-    public MC0020() {
+    public ICSRandom() {
         setICName("RANDOM BIT");
         setICNumber("ics.random");
         setICGroup(ICGroup.SELFTRIGGERED);

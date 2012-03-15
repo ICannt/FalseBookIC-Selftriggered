@@ -9,12 +9,12 @@ import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0232 extends SelftriggeredBaseIC {
+public class ICSSetTime extends SelftriggeredBaseIC {
 
     private int newTime;
     private World myWorld;
 
-    public MC0232() {
+    public ICSSetTime() {
         this.ICName = "SET-TIME";
         this.ICNumber = "ics.settime";
         setICGroup(ICGroup.SELFTRIGGERED);

@@ -8,36 +8,35 @@ import com.bukkit.gemo.utils.SignUtils;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0262 extends SelftriggeredBaseIC {
+public class ICSPowerSensor extends SelftriggeredBaseIC {
 
     private Block myBlock = null;
     private boolean result;
-    private int minLight = 15;
 
-    public MC0262() {
-        this.ICName = "LIGHT SENSOR";
-        this.ICNumber = "ics.lightsensor";
+    public ICSPowerSensor() {
+        this.ICName = "POWER SENSOR";
+        this.ICNumber = "ics.powersensor";
         setICGroup(ICGroup.SELFTRIGGERED);
         this.chipState = new BaseChip(false, false, false, "", "", "");
-        this.chipState.setOutputs("Output: High if the threshold is reached", "", "");
-        this.chipState.setLines("Minimum light level, 0 to 15.", "");
-        this.ICDescription = "The MC0262 checks to see if the light level of the block above the block behind the IC sign is greater than or equal to a configurable threshold.";
+        this.chipState.setOutputs("Output: High if the block is powered", "", "");
+        this.chipState.setLines("Y offset, with 0 being the IC block. Leave blank to default to the block below.", "");
+        this.ICDescription = "The MC0270 checks for a powered block relative to the block behind the IC sign. By default it checks the block directly underneath but this can be changed.";
     }
 
     public void checkCreation(SignChangeEvent event) {
         event.setLine(3, "");
 
         if (event.getLine(2).length() < 1) {
-            event.setLine(2, "15");
+            event.setLine(2, "-1");
         }
 
-        String minLight = event.getLine(2);
+        String yOffset = event.getLine(2);
         try {
-            if (minLight.length() > 0) {
-                Integer.parseInt(minLight);
+            if (yOffset.length() > 0) {
+                Integer.parseInt(yOffset);
             }
         } catch (NumberFormatException e) {
-            SignUtils.cancelSignCreation(event, "The third line must indicate the minimum light level.");
+            SignUtils.cancelSignCreation(event, "The third line must be a number or blank.");
             return;
         }
     }
@@ -53,7 +52,7 @@ public class MC0262 extends SelftriggeredBaseIC {
     }
 
     public void Execute() {
-        this.result = (this.myBlock.getLightLevel() >= this.minLight);
+        this.result = ((this.myBlock.isBlockPowered()) || (this.myBlock.isBlockIndirectlyPowered()));
         if (this.result != this.oldStatus) {
             this.oldStatus = this.result;
             switchLever(Lever.BACK, this.signBlock, this.result);

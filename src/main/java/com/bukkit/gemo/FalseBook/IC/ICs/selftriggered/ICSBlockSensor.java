@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import org.bukkit.block.Block;
 import org.bukkit.event.block.SignChangeEvent;
 
-public class MC0263 extends SelftriggeredBaseIC {
+public class ICSBlockSensor extends SelftriggeredBaseIC {
 
     private Block myBlock = null;
     private boolean result;
     private FBItemType item = null;
 
-    public MC0263() {
+    public ICSBlockSensor() {
         this.ICName = "BLOCK SENSOR";
         this.ICNumber = "ics.blocksensor";
         setICGroup(ICGroup.SELFTRIGGERED);

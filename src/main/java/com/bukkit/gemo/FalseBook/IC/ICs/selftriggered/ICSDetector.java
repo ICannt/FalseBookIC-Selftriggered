@@ -28,7 +28,7 @@ import org.bukkit.entity.Villager;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.util.Vector;
 
-public class MC0271 extends SelftriggeredBaseIC {
+public class ICSDetector extends SelftriggeredBaseIC {
 
     private boolean result;
     private Vector offsetVector = null;
@@ -36,7 +36,7 @@ public class MC0271 extends SelftriggeredBaseIC {
     private int detectionMode = -1;
     List<String> Types = new ArrayList<String>();
 
-    public MC0271() {
+    public ICSDetector() {
         this.ICName = "DETECTION";
         this.ICNumber = "ics.detector";
         setICGroup(ICGroup.SELFTRIGGERED);
